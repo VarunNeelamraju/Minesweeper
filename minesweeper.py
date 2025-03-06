@@ -99,16 +99,16 @@ class boardClass(object):
 
 #play game
 def playGame():
-    boardSize = int(input("Choose the Width of the board: "))
-    numMines = int(input("Choose the number of mines: "))
+    boardSize = 5  # Constant for board width
+    numMines = 3   # Constant for the number of mines
     gameOver = False
     winner = False
     Board = boardClass(boardSize, numMines)
     while not gameOver:
         print(Board)
         print("Make your move:")
-        x = int(input("x: "))
-        y = int(input("y: "))
+        x = 2  # Example constant value for x
+        y = 3  # Example constant value for y
         Board.makeMove(x, y)
         gameOver = Board.hitMine(x, y)
         if Board.isWinner() and gameOver == False:
